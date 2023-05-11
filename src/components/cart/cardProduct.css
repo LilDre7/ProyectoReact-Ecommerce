@@ -1,0 +1,11 @@
+.scroll-edit::-webkit-scrollbar {
+  width: 10px;
+  background-color: rgb(233, 243, 239);
+  border-radius: 10px;
+}
+
+.scroll-edit::-webkit-scrollbar-thumb {
+  background-color: rgb(107, 103, 103);
+  border-radius: 10px;
+}
+
