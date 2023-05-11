@@ -8,6 +8,7 @@ import Login from "./pages/Login";
 import NotFount from "./components/NotFount";
 import ProtectedAuth from "./auth/ProtectedAuth";
 import Cart from "./components/cart/Cart";
+import Loginpersonal from "./pages/Loginpersonal";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/loginpersonal" element={<Loginpersonal />}/>
 
         <Route path="/" element={<ProtectedAuth />}>
           <Route path="/purchases" element={<Purchases />} />

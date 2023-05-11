@@ -1,14 +1,15 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logOut, loginUser } from "../store/slices/userInfo";
+import Loginpersonal from "./Loginpersonal";
 
 const Login = () => {
   // ** Use Form para el envio de datos ** //
   const { register, handleSubmit } = useForm();
 
-  const { token , user } = useSelector((state) => state.userInfo);
+  const { token, user } = useSelector((state) => state.userInfo);
 
   const dispatch = useDispatch();
 
@@ -49,21 +50,21 @@ const Login = () => {
           onSubmit={handleSubmit(submit)}
           className="bg-white p-4 rounded-md sm:max-w-sm mx-auto text-xs"
         >
-          <h2 className="text-xs font-semibold  text-center ">
+          <h2 className="text-xs font-semibold text-center minitablets:text-xl ">
             Welcome! Enter your email and password to continue.
           </h2>
 
           <section className="mt-7 bg-blue-400/50 p-4 rounded-lg grid items-center ">
-            <h5 className="text-center p-1">Test data</h5>
+            <h5 className="text-center p-1 minitablets:text-sm ">Test data</h5>
 
             <div className="p-1 font-semibold">
               <i className="bx bx-envelope font-medium "></i>
-              <span> john@gmail.com </span>
+              <span className="minitablets:text-lg"> john@gmail.com </span>
             </div>
 
             <div className="p-1 font-semibold">
               <i className="bx bx-lock-alt font-medium "></i>
-              <span> john1234 </span>
+              <span className="minitablets:text-lg"> john1234 </span>
             </div>
           </section>
 
@@ -76,7 +77,7 @@ const Login = () => {
                 Email
               </label>
               <input
-                className="border-2 border-black rounded-md w-full"
+                className="border-2 border-black rounded-md w-full p-2 "
                 type="email"
                 id="email"
                 {...register("email", {
@@ -93,7 +94,7 @@ const Login = () => {
                 Password
               </label>
               <input
-                className="border-2 border-black rounded-md w-full"
+                className="border-2 border-black rounded-md w-full p-2 "
                 type="password"
                 id="password"
                 {...register("password", {
@@ -105,19 +106,19 @@ const Login = () => {
 
           <button
             className="bg-blue-400 text-white mb-5 py-2 block rounded-md w-full mt-5 hover:bg-blue-500 
-          transition-colors"
+          transition-colors minitablets:text-lg "
           >
             Login
           </button>
 
-          <span className="font-medium">
+          <span className="font-medium minitablets:text-base ">
             Don't have an account?
-            <Link
+            <NavLink
               className="text-blue-600 cursor-pointer hover:text-red-500 transition-colors pl-3 "
-              to="/signup"
+              to="/Loginpersonal"
             >
-              Sign Up
-            </Link>
+              Sign Up 
+            </NavLink>
           </span>
         </form>
       )}
